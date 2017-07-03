@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link  rel="stylesheet" href="css/index.css">
+    <link  rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="js/fontsize.js"></script>
+</head>
+<body>
+<div class="da">
+    <div class="yi">
+        <p class="jian">个人简历</p>
+        <img src="images/20170703154514.jpg" class="wo">
+        <img src="images/music.png" class="yinn">
+        <img src="images/20170703152031.png" class="xia">
+    </div>
+    <div class="yin">
+        <h5>我的介绍</h5>
+        <h6>Hello！</h6>
+        <img src="images/music.png" class="yinn">
+        <img src="images/002.jpg" class="zuo" >
+        <p class="xing">姓名:ZhangJing</p>
+        <p class="ge">生日:1997.08.09</p>
+        <p class="lai">年龄:20周岁</p>
+        <img src="images/20170703152031.png" class="xia">
+    </div>
+    <div class="yin">
+      <h4>爱好</h4>
+        <img src="images/music.png" class="yinn">
+        <p class="ai">我的爱好是弹琴，唱歌...</p>
+        <p class="xue">我现在学的是web前端方向。</p>
+        <p class="ming">我的座右铭：自己选择的路跪着也要走完。</p>
+        <img src="images/20170703152031.png" class="xia">
+    </div>
+    <div class="yin">
+        <img src="images/music.png" class="yinn">
+        <h5>在校经历</h5>
+        <p class="gao">高中毕业于滦县二中</p>
+        <p class="zai">在盛邦升华就读web前端方向，计算机软件，我学了Html,CSS，JQuery,javascript等知识，
+        从PC端到移动端，从Html语言到分支语言，现在处于二期学习，还有最后的一年里，
+        我也会更加努力学习，争取一年后找到属于我的工作岗位。
+        </p>
+        <img src="images/20170703152031.png" class="xia">
+    </div>
+    <div class="yin">
+        <img src="images/music.png" class="yinn">
+        <h3>自我评价</h3>
+        <p class="ping">我是一个还有一年就要毕业的准大学生,经过一年的专业学习,能吃苦耐劳。我学会了细心做事，努力开发创新思维，并时刻保持着平静的心态去工作，
+            用万分的热情对待每一件事。请您给我一个支点，让我为我所服务的团队贡献自己的力量，共同创造劳动果实，
+            实现自我价值。</p>
+        <img src="images/20170703152031.png" class="xia">
+    </div>
+    <div class="yin">
+        <img src="images/music.png" class="yinn">
+        <img src="images/009.jpg" class="xie">
+        <div class="hou">
+        <h4 style="color: red">联系方式</h4>
+        <p class="ai" style="color: white">tel:15033959624</p>
+        <p class="ai" style="color: white">qq:1354751300</p>
+        </div>
+    </div>
+    <audio src="video/告白气球.mp3" autoplay id="audio_my" loop></audio>
+</div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/touch.js"></script>
+<script>
+    var curpage=0;
+    $(".da").swipeUp(function(){
+        if(curpage<5){
+            $(".da>div").eq(curpage).addClass("pt_ToTop");
+            curpage++;
+            $(".da>div").eq(curpage).removeClass("yin");
+            $(".da>div").eq(curpage).addClass("pt_fromBottom");
+            setTimeout(function(){
+                $(".da>div").eq(curpage-1).removeClass("pt_ToTop");
+                $(".da>div").eq(curpage-1).addClass("yin");
+                $(".da>div").eq(curpage).removeClass("pt_fromBottom");
+            },600);
+        }
+    });
+    $(".da").swipeDown(function(){
+        if(curpage>0){
+            $(".da>div").eq(curpage).addClass("pt_toBottom");
+            curpage--;
+            $(".da>div").eq(curpage).removeClass("yin");
+            $(".da>div").eq(curpage).addClass("pt_fromTop");
+            setTimeout(function(){
+                $(".da>div").eq(curpage+1).removeClass("pt_toBottom");
+                $(".da>div").eq(curpage+1).addClass("yin");
+                $(".da>div").eq(curpage).removeClass("pt_fromTop");
+            },700);
+        }
+    })
+</script>
+</html>
